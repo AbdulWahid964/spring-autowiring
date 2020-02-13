@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd ">
+
+	<context:annotation-config />
+
+	<bean class="com.java.spring.Employee" id="employee" autowire="byType">
+		<property name="name" value="Abdul Wahid"></property> 
+		<property name="id" value="20"></property>
+	</bean>
+
+	<bean id="address" class="com.java.spring.Address" autowire-candidate="false">
+	<property name="addressName" value="Koya Arunagiri"></property>
+	</bean>
+
+	<bean id="address1" class="com.java.spring.Address">
+		<property name="addressName" value="KK nagar"></property>
+	</bean>
+
+
+	<!-- ByName -->
+	<!-- <bean id="employee" class="com.java.spring.Employee" autowire="byName"> 
+		<property name="name" value="Abdul Wahid"></property> <property name="id" 
+		value="20"></property> </bean> -->
+	<!-- ByType -->
+	<!-- <bean id="employee" class="com.java.spring.Employee" autowire="byType"> 
+		<property name="name" value="Abdul Wahid"></property> <property name="id" 
+		value="20"></property> </bean> -->
+	<!-- constructor -->
+	<!-- <bean id="address" class="com.java.spring.Address"> <property name="addressName" 
+		value="test"></property> </bean> <bean id="employee" class="com.java.spring.Employee" 
+		autowire="constructor" > <property name="name" value="Abdul Wahid"></property> 
+		<property name="id" value="20"></property> </bean> -->
+
+</beans>
